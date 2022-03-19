@@ -1,0 +1,9 @@
++ com.company.OperationFabric.Plus
+- com.company.OperationFabric.Minus
+/ com.company.OperationFabric.Division
+* com.company.OperationFabric.Multiplication
+SQRT com.company.OperationFabric.SQRT
+Pop com.company.OperationFabric.Pop
+Push com.company.OperationFabric.Push
+Print com.company.OperationFabric.Print
+Define com.company.OperationFabric.Define
