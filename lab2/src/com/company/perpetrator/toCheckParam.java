@@ -1,6 +1,6 @@
 package com.company.perpetrator;
 
-public class toCheckSecParam {
+public class toCheckParam {
     private static final double flag = - 0.0;
 
     public static boolean isDigit(String param2)

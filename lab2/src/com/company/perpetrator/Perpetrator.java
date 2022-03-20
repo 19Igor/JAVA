@@ -3,7 +3,6 @@ package com.company.perpetrator;
 import java.util.Map;
 import java.util.Stack;
 
-import com.company.perpetrator.toCheckSecParam;
 import com.company.OperationFabric.*;
 
 public class Perpetrator
@@ -14,35 +13,49 @@ public class Perpetrator
         {
             if (Commands[i].equalsIgnoreCase("DEFINE"))
             {
-
-
-
-                if (toCheckSecParam.isDigit(Commands[i + 2]))
-                {
-                    Define obj = new Define();
-                    obj.CommandDefined(stack, defined, Commands[i + 1], Commands[i + 2]);
-                }
+                Define obj = new Define();
+                obj.CommandDefined(defined, Commands[i + 1], Commands[i + 2]);
             }
-
-            // в таком же духе доделать остальные операции (с помощью фабрики)
-
             else if (Commands[i].equalsIgnoreCase("PUSH"))
             {
-                if (toCheckSecParam.isDigit(Commands[i + 1]))
-                {
-                    stack.push(Double.parseDouble(Commands[i + 1]));
-                }
+                Push obj = new Push();
+                obj.CommandPush(stack, defined, Commands[i + 1]);
             }
             else if (Commands[i].equalsIgnoreCase("POP"))
             {
-                stack.pop();
+                Pop obj = new Pop();
+                obj.Command(stack);
             }
             else if (Commands[i].equalsIgnoreCase("DIVISION"))
             {
-
+                Division obj = new Division();
+                obj.Command(stack);
             }
-
+            else if (Commands[i].equalsIgnoreCase("MULTIPLICATION"))
+            {
+                Multiplication obj = new Multiplication();
+                obj.Command(stack);
+            }
+            else if (Commands[i].equalsIgnoreCase("PLUS"))
+            {
+                Plus obj = new Plus();
+                obj.Command(stack);
+            }
+            else if (Commands[i].equalsIgnoreCase("MINUS"))
+            {
+                Minus obj = new Minus();
+                obj.Command(stack);
+            }
+            else if (Commands[i].equalsIgnoreCase("PRINT"))
+            {
+                Print obj = new Print();
+                obj.Command(stack);
+            }
+            else if (Commands[i].equalsIgnoreCase("SQRT"))
+            {
+                SQRT obj = new SQRT();
+                obj.Command(stack);
+            }
         }
     }
 }
-

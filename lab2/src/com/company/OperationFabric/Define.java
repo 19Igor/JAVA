@@ -1,4 +1,5 @@
 package com.company.OperationFabric;
+import com.company.perpetrator.toCheckParam;
 
 import java.util.Map;
 import java.util.Stack;
@@ -7,24 +8,42 @@ public class Define implements Operations
 {
     private double number = 0;
     @Override
-    public void CommandDefined(Stack<Double> stack, Map<String, Double> define, String key, String val)
+    public void CommandDefined(Map<String, Double> define, String key, String val)
     {
+        if (toCheckParam.isDigit(key))  // if first parameter of define is a digit
+        {
+            System.out.println("Incorrect first define parameter. \n");
+            System.out.println("Printed by Define.java \n");
+            return;
+        }
         // Если второй аргумент это переменная, а не число
-        if (define.containsKey(val)) {
+        if (define.containsKey(val))
+        {
             number = define.get(val);
             define.put(key, number);
-            stack.push(number);
         }
-        else {
-            try {
+        else
+        {
+            try
+            {
                 Double.parseDouble(val);
-            } catch (NumberFormatException e) {
-                System.out.println("Неправильный второй параметр Define\n");
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Неправильный второй параметр Define \n");
+                System.out.println("Printed by Define.java  \n");
                 return;
             }
             number = Double.parseDouble(val);
             define.put(key, number);
-            stack.push(number);
         }
     }
 }
+
+/*
+define a 1
+define b 2
+define a b
+define c 3
+PLUS a c
+*/

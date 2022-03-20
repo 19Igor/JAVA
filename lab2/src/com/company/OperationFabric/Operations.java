@@ -6,8 +6,13 @@ import java.util.Stack;
 public interface Operations
 {
     default void Command (Stack <Double> stack){}
-    default void CommandPush (Stack <Double> stack, Map <String, Double> define, String val){}
-    default void CommandDefined (Stack<Double> stack, Map <String, Double> define, String key, String val){}
+    default void CommandPush (Stack <Double> stack,
+                              Map <String, Double> define,
+                              String val){}
+
+    default void CommandDefined (Map <String, Double> define,
+                                 String key,
+                                 String val){}
 }
 
 

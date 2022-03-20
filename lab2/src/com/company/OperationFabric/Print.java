@@ -10,5 +10,3 @@ public class Print implements Operations
         System.out.println("Верхний элемент со стека: " + stack.peek());
     }
 }
-
-// дописать классы

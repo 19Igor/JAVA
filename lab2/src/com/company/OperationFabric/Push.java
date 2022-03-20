@@ -6,27 +6,25 @@ import java.util.Stack;
 public class Push implements Operations
 {
     @Override
-    public void CommandPush(Stack<Double> stack, Map<String, Double> define, String val)
-    {
+    public void CommandPush(Stack<Double> stack, Map<String, Double> define, String val) {
         try
         {
-            Double.parseDouble(val);
+            Double.parseDouble(val);               // проверка на то, что val  - это число
         }
         catch (NumberFormatException e)
         {
-            System.out.println("Неправильный параметр Pushn\n");
-            return;
+            // here we clearly know val is a variable
+            if (!define.containsKey(val)) // if it's a variable and it doesn't contain in the map
+            {
+                System.out.println("В мапе нету такой переменной \n");
+                return;
+            }
+            else
+            {
+                stack.push(define.get(val));
+                return;
+            }
         }
-
-        if (!define.containsKey(val))
-        {
-            System.out.println("В мапе нету такой переменнйо\n");
-            return;
-        }
-
-        if (define.containsKey(val))
-            stack.push(define.get(val));
-        else
-            stack.push(Double.parseDouble(val));
+        stack.push(Double.parseDouble(val));
     }
 }
