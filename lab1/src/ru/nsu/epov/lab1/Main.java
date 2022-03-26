@@ -7,7 +7,6 @@ import ru.nsu.epov.lab1.sort.Sort;
 
 import java.io.*;
 import java.util.HashMap;
-import java.util.Map;
 
 
 public class Main
@@ -16,7 +15,7 @@ public class Main
         final int InPathIndex = 0;
 
         CheckingFromFool.ArgChecker(2);
-        Map<String, Integer> map = new HashMap<String, Integer>();
+        HashMap<String, Integer> map = new HashMap<String, Integer>();
 
         String separator = File.separator;
         File InFile = new File("src"+ separator + args[InPathIndex]);
@@ -27,7 +26,7 @@ public class Main
             System.out.print("Printed by Main.java");
         }
 
-        Sort.SortMap(map);
+        map = Sort.SortMap(map);
 
         PrintToCSV.Printer(map);
     }
