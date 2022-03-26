@@ -1,4 +1,4 @@
-package com.company.print.counter;
+package ru.nsu.epov.lab1.print.counter;
 
 import java.util.Map;
 

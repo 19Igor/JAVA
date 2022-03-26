@@ -1,4 +1,4 @@
-package com.company.sort;
+package ru.nsu.epov.lab1.sort;
 
 import java.util.Map;
 

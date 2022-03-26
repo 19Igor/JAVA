@@ -1,4 +1,4 @@
-package com.company.reader.put;
+package ru.nsu.epov.lab1.reader.put;
 
 import java.util.Map;
 

@@ -1,9 +1,9 @@
-package com.company;
+package ru.nsu.epov.lab1;
 
-import com.company.checker.CheckingFromFool;
-import com.company.print.PrintToCSV;
-import com.company.reader.Reader;
-import com.company.sort.Sort;
+import ru.nsu.epov.lab1.checker.CheckingFromFool;
+import ru.nsu.epov.lab1.print.PrintToCSV;
+import ru.nsu.epov.lab1.reader.Reader;
+import ru.nsu.epov.lab1.sort.Sort;
 
 import java.io.*;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.company.print;
+package ru.nsu.epov.lab1.print;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import com.company.print.counter.Counter;
+import ru.nsu.epov.lab1.print.counter.Counter;
 
 
 public class PrintToCSV

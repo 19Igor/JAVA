@@ -1,10 +1,10 @@
-package com.company.reader;
+package ru.nsu.epov.lab1.reader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Map;
 import java.util.Scanner;
-import com.company.reader.put.Putting;
+import ru.nsu.epov.lab1.reader.put.Putting;
 
 public class Reader
 {

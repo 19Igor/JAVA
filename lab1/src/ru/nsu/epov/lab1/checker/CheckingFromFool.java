@@ -1,4 +1,4 @@
-package com.company.checker;
+package ru.nsu.epov.lab1.checker;
 
 
 public class CheckingFromFool
