@@ -12,7 +12,7 @@ public class Define implements Operations
     {
         if (toCheckParam.isDigit(key))  // if first parameter of define is a digit
         {
-            System.out.println("Incorrect first define parameter. \n");
+            System.out.println("Incorrect first define parameter.");
             System.out.println("Printed by Define.java \n");
             return;
         }
@@ -30,7 +30,7 @@ public class Define implements Operations
             }
             catch (NumberFormatException e)
             {
-                System.out.println("Неправильный второй параметр Define \n");
+                System.out.println("Неправильный второй параметр Define.");
                 System.out.println("Printed by Define.java  \n");
                 return;
             }

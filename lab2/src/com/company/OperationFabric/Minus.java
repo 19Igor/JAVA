@@ -9,7 +9,7 @@ public class Minus implements Operations
     {
         if (stack.size() < 2)
         {
-            System.out.println("Not enough elements in the stack.\n");
+            System.out.println("Not enough elements in the stack.");
             System.out.println("Printed by Minus\n");
             return;
         }

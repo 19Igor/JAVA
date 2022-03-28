@@ -9,13 +9,13 @@ public class Division implements Operations
     {
         if (stack.peek() == 0)
         {
-            System.out.println("Деление на ноль.\n");
+            System.out.println("Деление на ноль.");
             System.out.println("Printed by Division\n");
             return;
         }
         if (stack.size() < 2)
         {
-            System.out.println("Not enough elements in the stack.\n");
+            System.out.println("Not enough elements in the stack.");
             System.out.println("Printed by Division\n");
             return;
         }

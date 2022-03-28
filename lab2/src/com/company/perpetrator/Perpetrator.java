@@ -15,6 +15,7 @@ public class Perpetrator
             {
                 Define obj = new Define();
                 obj.CommandDefined(defined, Commands[i + 1], Commands[i + 2]);
+                int a = 10;
             }
             else if (Commands[i].equalsIgnoreCase("PUSH"))
             {

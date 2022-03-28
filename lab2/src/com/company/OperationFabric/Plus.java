@@ -14,8 +14,8 @@ public class Plus implements Operations
         }
         else
         {
-            System.out.println("На стеке меньше одного числа !\n");
-            System.out.println("Printed by Plus");
+            System.out.println("На стеке меньше одного числа !");
+            System.out.println("Printed by Plus\n");
         }
     }
 }
@@ -26,5 +26,4 @@ public class Plus implements Operations
 * push
 * define
 * Division
-*
 * */

@@ -10,7 +10,7 @@ public class Pop implements Operations
         if (stack.size() <= 0)
         {
             System.out.println("На стеке нет места!");
-            System.out.println("Printed by Pop");
+            System.out.println("Printed by Pop\n");
             return;
         }
         stack.pop();

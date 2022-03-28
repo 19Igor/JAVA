@@ -16,7 +16,7 @@ public class SQRT implements Operations
         }
         if (a < 0 )
         {
-            System.out.println("Корень от отрицательного числа.\n");
+            System.out.println("Корень от отрицательного числа.");
             System.out.println("Printed by SQRT\n");
             return;
         }

@@ -9,7 +9,7 @@ public class Multiplication implements Operations
     {
         if (stack.size() < 2)
         {
-            System.out.println("Not enough elements in the stack.\n");
+            System.out.println("Not enough elements in the stack.");
             System.out.println("Printed by Multiplication\n");
             return;
         }
