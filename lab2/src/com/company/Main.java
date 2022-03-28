@@ -30,7 +30,7 @@ public class Main {
         String FileToString_1[] = toReadStrings.ReadString(InFile);
 
         CommandList A = new CommandList();
-        Map<String, Operations> ReturnedOperations = A.OperListReturn();
+//        Map<String, Operations> ReturnedOperations = A.OperListReturn();
 
         Perpetrator.Perp(FileToString_1, stack, DefineMap);
     }

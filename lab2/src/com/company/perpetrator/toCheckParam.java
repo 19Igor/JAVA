@@ -10,8 +10,8 @@ public class toCheckParam {
             return true;
         }catch (Exception e)
         {
-            System.out.println("Incorrect second parameter.\n");
-            System.out.println("Printed by toCheckSecParam\n");
+//            System.out.println("Incorrect second parameter.");
+//            System.out.println("Printed by toCheckSecParam\n");
             return false;
         }
 
