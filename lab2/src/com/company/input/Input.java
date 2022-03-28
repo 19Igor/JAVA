@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/*
-* Ввод надо также сделать и с консоли == команды могут вводиться и с консоли
-* */
 
 public class Input
 {
