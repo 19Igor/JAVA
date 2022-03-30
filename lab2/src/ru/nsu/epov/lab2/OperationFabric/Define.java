@@ -1,8 +1,7 @@
-package com.company.OperationFabric;
-import com.company.perpetrator.toCheckParam;
+package ru.nsu.epov.lab2.OperationFabric;
+import ru.nsu.epov.lab2.perpetrator.toCheckParam;
 
 import java.util.Map;
-import java.util.Stack;
 
 public class Define implements Operations
 {

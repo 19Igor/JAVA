@@ -1,9 +1,9 @@
-package com.company.perpetrator;
+package ru.nsu.epov.lab2.perpetrator;
 
 import java.util.Map;
 import java.util.Stack;
 
-import com.company.OperationFabric.*;
+import ru.nsu.epov.lab2.OperationFabric.*;
 
 public class Perpetrator
 {
@@ -15,7 +15,6 @@ public class Perpetrator
             {
                 Define obj = new Define();
                 obj.CommandDefined(defined, Commands[i + 1], Commands[i + 2]);
-                int a = 10;
             }
             else if (Commands[i].equalsIgnoreCase("PUSH"))
             {

@@ -1,4 +1,4 @@
-package com.company.OperationFabric;
+package ru.nsu.epov.lab2.OperationFabric;
 
 import java.util.Map;
 import java.util.Stack;
@@ -14,11 +14,3 @@ public interface Operations
                                  String key,
                                  String val){}
 }
-
-
-// defiend a 5
-/*
-* defined b a
-*
-*
-* */

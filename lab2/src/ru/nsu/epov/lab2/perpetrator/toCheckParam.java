@@ -1,4 +1,4 @@
-package com.company.perpetrator;
+package ru.nsu.epov.lab2.perpetrator;
 
 public class toCheckParam {
     private static final double flag = - 0.0;

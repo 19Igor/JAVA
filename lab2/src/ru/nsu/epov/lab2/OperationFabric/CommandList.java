@@ -1,4 +1,4 @@
-package com.company.OperationFabric;
+package ru.nsu.epov.lab2.OperationFabric;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

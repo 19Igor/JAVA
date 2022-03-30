@@ -1,4 +1,4 @@
-package com.company.input;
+package ru.nsu.epov.lab2.input;
 
 import java.io.BufferedReader;
 import java.io.IOException;
