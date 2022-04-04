@@ -18,14 +18,13 @@ public class Main
         HashMap<String, Integer> map = new HashMap<String, Integer>();
 
         String separator = File.separator;
-        File InFile = new File("src"+ separator + args[InPathIndex]);
+        File InFile = new File( args[InPathIndex]);
 
         if (!Reader.ReadText(InFile, map))
         {
             System.out.println("Problems with reading.");
             System.out.print("Printed by Main.java");
         }
-
         map = Sort.SortMap(map);
 
         PrintToCSV.Printer(map);
