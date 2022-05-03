@@ -1,61 +1,51 @@
 package ru.nsu.epov.lab2.perpetrator;
 
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-import ru.nsu.epov.lab2.OperationFabric.*;
+import ru.nsu.epov.lab2.core.CommandList;
+import ru.nsu.epov.lab2.core.Operations;
+import ru.nsu.epov.lab2.core.CommandContext;
 
 public class Perpetrator
 {
-    public static void Perp(String Commands[], Stack<Double> stack, Map<String, Double> defined)
-    {
-        for (int i = 1; i < Commands.length; i++)
+    public static void Perp(String[] commands, Stack<Double> stack, HashMap<String, Double> defined) throws IOException, InvocationTargetException, NoSuchMethodException {
+        Map<String, Operations> commandList;
+
+        CommandList perpet = new CommandList();
+        commandList = perpet.returnCommandList(); // couple: key, command     PLUS object_plus
+
+        CommandContext context = new CommandContext();
+        context.setStack(stack);
+        context.setDefine(defined);
+        Stack<String> values = new Stack<>();
+        context.setValues(values);
+        /**
+         * Возвращает мапу с элементами такого вида
+         * PlUS new Plus()-объект плюс
+         * */
+        try
         {
-            if (Commands[i].equalsIgnoreCase("DEFINE"))
-            {
-                Define obj = new Define();
-                obj.CommandDefined(defined, Commands[i + 1], Commands[i + 2]);
+            int flag;
+            for (int i = 0; !commands[i].equalsIgnoreCase("/0"); i++) {
+                if (commandList.containsKey(commands[i]))      // если в commandList содержится пользовательская команда
+                {
+                    flag = i;
+                    for (int j = 0; j < commandList.get(commands[flag]).returnArgNumb(); j++) {
+                        context.getValues().push(commands[++i]);
+                    }
+                    commandList.get(commands[flag]).workingCommand(context);
+                } else {
+                    System.out.println("Ошибка !");
+                }
             }
-            else if (Commands[i].equalsIgnoreCase("PUSH"))
-            {
-                Push obj = new Push();
-                obj.CommandPush(stack, defined, Commands[i + 1]);
-            }
-            else if (Commands[i].equalsIgnoreCase("POP"))
-            {
-                Pop obj = new Pop();
-                obj.Command(stack);
-            }
-            else if (Commands[i].equalsIgnoreCase("DIVISION"))
-            {
-                Division obj = new Division();
-                obj.Command(stack);
-            }
-            else if (Commands[i].equalsIgnoreCase("MULTIPLICATION"))
-            {
-                Multiplication obj = new Multiplication();
-                obj.Command(stack);
-            }
-            else if (Commands[i].equalsIgnoreCase("PLUS"))
-            {
-                Plus obj = new Plus();
-                obj.Command(stack);
-            }
-            else if (Commands[i].equalsIgnoreCase("MINUS"))
-            {
-                Minus obj = new Minus();
-                obj.Command(stack);
-            }
-            else if (Commands[i].equalsIgnoreCase("PRINT"))
-            {
-                Print obj = new Print();
-                obj.Command(stack);
-            }
-            else if (Commands[i].equalsIgnoreCase("SQRT"))
-            {
-                SQRT obj = new SQRT();
-                obj.Command(stack);
-            }
+        } catch(Exception e)
+        {
+            e.printStackTrace();
         }
     }
 }
+

@@ -1,18 +1,22 @@
 package ru.nsu.epov.lab2.OperationFabric;
 
+import ru.nsu.epov.lab2.core.CommandContext;
+import ru.nsu.epov.lab2.core.Operations;
+
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class Pop implements Operations
 {
     @Override
-    public void Command(Stack<Double> stack)
+    public void workingCommand(CommandContext context)
     {
-        if (stack.size() <= 0)
-        {
-            System.out.println("На стеке нет места!");
-            System.out.println("Printed by Pop\n");
-            return;
+        try {
+            context.getStack().pop();
         }
-        stack.pop();
+        catch(EmptyStackException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

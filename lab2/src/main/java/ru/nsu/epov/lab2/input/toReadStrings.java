@@ -1,4 +1,4 @@
-package ru.nsu.epov.lab2.reading;
+package ru.nsu.epov.lab2.input;
 
 
 import java.io.*;
@@ -6,12 +6,16 @@ import java.util.Scanner;
 
 public class toReadStrings
 {
-    private static String[] DeleteShiftInString(String str[])
+    final private static String SPEC_SYMBOL = "/0";
+    final static String regex = "[!@#$%^&*?()_+]";
+
+    private static String[] DeleteShiftInString(String[] str)
     {
         int counterOfShifts = str.length;
         for(int i = 0; i < str.length - 1; i++)
         {
-            if(str[i].equals(""))
+//            if(str[i].equals(""))
+            if (str[i].matches(regex) || str[i].equals(""))
             {
                 for(int j = i; j < str.length - 1; j++)
                 {
@@ -20,10 +24,7 @@ public class toReadStrings
                 counterOfShifts--;
             }
         }
-        for (int i = counterOfShifts; i < str.length; i++)
-        {
-            str[i] = "";
-        }
+        str[counterOfShifts] = SPEC_SYMBOL;
         return str;
     }
     public static String[] ReadStringFromFile(File InFile) throws FileNotFoundException {
@@ -41,17 +42,19 @@ public class toReadStrings
         return TempAr_1;
     }
 
+    static String STOP_SIGNAL = "Before the end type << Stop >>";
+
     public static String[] ReadStringFromConsole()
     {
         StringBuilder tempString = new StringBuilder();
         Scanner console = new Scanner(System.in);
-        String TempStr = console.nextLine();
+        String tempStr = console.nextLine();
 
-        System.out.println("Before the end type << Stop >>");
-        while (!TempStr.equals("STOP"))
+        System.out.println(STOP_SIGNAL);
+        while (!tempStr.equals("Stop"))
         {
-            tempString.append(" " + TempStr + " ");
-            TempStr = console.nextLine();
+            tempString.append(" " + tempStr + " ");
+            tempStr = console.nextLine();
         }
 
         String TempAr_1[] = tempString.toString().split(" ");

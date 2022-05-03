@@ -1,30 +1,38 @@
 package ru.nsu.epov.lab2.OperationFabric;
 
+import ru.nsu.epov.lab2.core.CommandContext;
+import ru.nsu.epov.lab2.core.Operations;
+import ru.nsu.epov.lab2.perpetrator.toCheckParam;
+
+import java.util.EmptyStackException;
 import java.util.Map;
 import java.util.Stack;
 
 public class Push implements Operations
 {
     @Override
-    public void CommandPush(Stack<Double> stack, Map<String, Double> define, String val) {
+    public void workingCommand(CommandContext context) {
         try
         {
-            Double.parseDouble(val);               // проверка на то, что val  - это число
-        }
-        catch (NumberFormatException e)
-        {
+            String val = context.getValues().pop();
             // here we clearly know val is a variable
-            if (!define.containsKey(val)) // if it's a variable and it doesn't contain in the map
+            if (context.getDefine().containsKey(val)) // if it's a variable and it doesn't contained in the map
             {
-                System.out.println("В мапе нету такой переменной \n");
-                return;
+                context.getStack().push(context.getDefine().get(val));
             }
             else
             {
-                stack.push(define.get(val));
-                return;
+                context.getStack().push(Double.parseDouble(val));
             }
         }
-        stack.push(Double.parseDouble(val));
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public final Integer returnArgNumb()
+    {
+        return 1;
     }
 }

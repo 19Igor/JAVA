@@ -1,25 +1,23 @@
 package ru.nsu.epov.lab2.OperationFabric;
 
+import ru.nsu.epov.lab2.core.CommandContext;
+import ru.nsu.epov.lab2.core.Operations;
+
 import java.util.Stack;
+import java.util.concurrent.ExecutionException;
 
 import static java.lang.Math.sqrt;
 
-public class SQRT implements Operations
-{
+public class SQRT implements Operations {
     @Override
-    public void Command(Stack<Double> stack)
-    {
-        double a = stack.peek();
-        if (stack.size() == 0)
-        {
-            System.out.println("the stack have no elements\n");
+    public void workingCommand(CommandContext context) {
+        try {
+            if (context.getStack().peek() < 0) {
+                throw new Exception("Корень от отрицательного числа.");
+            }
+            context.getStack().push(sqrt(context.getStack().pop()));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        if (a < 0 )
-        {
-            System.out.println("Корень от отрицательного числа.");
-            System.out.println("Printed by SQRT\n");
-            return;
-        }
-        stack.push(sqrt(stack.pop()));
     }
 }

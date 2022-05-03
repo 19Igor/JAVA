@@ -1,24 +1,28 @@
 package ru.nsu.epov.lab2.input;
 
-import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Map;
+import java.util.Stack;
 
 
 public class Input
 {
-    public static String toEnterInputFilePath(String ar) throws IOException {
-        String FilePath;
-        if (ar.length() == 0)
+    public String[] In(Map<String, Double> DefineMap, Stack<Double> stack, String[] args) throws IOException {
+        if (args.length == 1)
         {
-            System.out.println("Введите путь к файлу: ");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            FilePath = reader.readLine();
+            String FilePath = args[0];   // getting path to a file
+            File InFile = new File(FilePath);
+            return toReadStrings.ReadStringFromFile(InFile);
+        }
+        else if (args.length < 1)
+        {
+            return toReadStrings.ReadStringFromConsole();
         }
         else
         {
-            FilePath = ar;
+            System.out.println("Printed by reading/toReadStrings");
+            throw new IOException("Incorrect numb of parameters.");
         }
-        return FilePath;
     }
 }

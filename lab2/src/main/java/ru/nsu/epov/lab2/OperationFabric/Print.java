@@ -1,12 +1,22 @@
 package ru.nsu.epov.lab2.OperationFabric;
 
-import java.util.Stack;
+import ru.nsu.epov.lab2.core.CommandContext;
+import ru.nsu.epov.lab2.core.Operations;
+
+import java.util.EmptyStackException;
 
 public class Print implements Operations
 {
     @Override
-    public void Command(Stack<Double> stack)
+    public void workingCommand(CommandContext context)
     {
-        System.out.println("Верхний элемент со стека: " + stack.peek());
+        try {
+            System.out.println( context.getStack().peek());
+        }
+        catch(EmptyStackException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
+

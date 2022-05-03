@@ -1,21 +1,26 @@
 package ru.nsu.epov.lab2.OperationFabric;
 
 
+import ru.nsu.epov.lab2.core.CommandContext;
+import ru.nsu.epov.lab2.core.Operations;
+
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class Plus implements Operations
 {
     @Override
-    public void Command(Stack<Double> stack)
+    public void workingCommand(CommandContext context)
     {
-        if (stack.size() >= 2)
-        {
-            stack.push(stack.pop() + stack.pop());
+        try {
+            if(context.getStack().size()<2)
+            {
+                throw new EmptyStackException();
+            }
+            context.getStack().push(context.getStack().pop() + context.getStack().pop());
         }
-        else
-        {
-            System.out.println("На стеке меньше одного числа !");
-            System.out.println("Printed by Plus\n");
+        catch (EmptyStackException e){
+            e.printStackTrace();
         }
     }
 }

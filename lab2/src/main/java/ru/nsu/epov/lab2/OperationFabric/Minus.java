@@ -1,20 +1,25 @@
 package ru.nsu.epov.lab2.OperationFabric;
 
+import ru.nsu.epov.lab2.core.CommandContext;
+import ru.nsu.epov.lab2.core.Operations;
+
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class Minus implements Operations
 {
     @Override
-    public void Command(Stack<Double> stack)
+    public void workingCommand(CommandContext context)
     {
-        if (stack.size() < 2)
+        try {
+        if(context.getStack().size()<2)
         {
-            System.out.println("Not enough elements in the stack.");
-            System.out.println("Printed by Minus\n");
-            return;
+            throw new EmptyStackException();
         }
-        double a = stack.pop();
-        double b = stack.pop();
-        stack.push(b - a);
+            context.getStack().push(context.getStack().pop() - context.getStack().pop());
+        }
+        catch (EmptyStackException e){
+            e.printStackTrace();
+        }
     }
 }

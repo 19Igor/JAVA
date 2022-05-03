@@ -1,18 +1,25 @@
 package ru.nsu.epov.lab2.OperationFabric;
 
+import ru.nsu.epov.lab2.core.CommandContext;
+import ru.nsu.epov.lab2.core.Operations;
+
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class Multiplication implements Operations
 {
     @Override
-    public void Command(Stack<Double> stack)
+    public void workingCommand(CommandContext context)
     {
-        if (stack.size() < 2)
-        {
-            System.out.println("Not enough elements in the stack.");
-            System.out.println("Printed by Multiplication\n");
-            return;
+        try {
+            if(context.getStack().size()<2)
+            {
+                throw new EmptyStackException();
+            }
+            context.getStack().push(context.getStack().pop() * context.getStack().pop());
         }
-        stack.push(stack.pop() * stack.pop());
+        catch (EmptyStackException e){
+            e.printStackTrace();
+        }
     }
 }
