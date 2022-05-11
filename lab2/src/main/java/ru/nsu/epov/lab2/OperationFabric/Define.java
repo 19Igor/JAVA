@@ -1,4 +1,7 @@
 package ru.nsu.epov.lab2.OperationFabric;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.nsu.epov.lab2.core.CommandContext;
 import ru.nsu.epov.lab2.core.Operations;
 import ru.nsu.epov.lab2.perpetrator.toCheckParam;
@@ -7,10 +10,12 @@ import java.util.EmptyStackException;
 
 public class Define implements Operations
 {
-    private double number = 0;
+    static final Logger logger = LogManager.getLogger(Define.class);
     @Override
     public void workingCommand(CommandContext context)
     {
+        double number = 0;
+        logger.debug("Command DEFINE runs.");
         /**
          * if the first parameter of Define command is digit
          * */
@@ -31,16 +36,14 @@ public class Define implements Operations
                 context.getDefine().put(key, number);
             } else
             {
-
                 number = Double.parseDouble(val);
                 context.getDefine().put(key, number);
             }
         }
         catch (NumberFormatException e)
         {
-            System.out.println("Incorrect second Define command parameter.");
-            System.out.println("Printed by Define.java  \n");
-            return;
+            logger.error("Incorrect second Define command parameter.");
+            return ;
         }
         catch (EmptyStackException e)
         {
@@ -50,6 +53,8 @@ public class Define implements Operations
         {
             e.printStackTrace();
         }
+        logger.debug("Command DEFINE terminated.");
+
     }
     @Override
     public final Integer returnArgNumb()

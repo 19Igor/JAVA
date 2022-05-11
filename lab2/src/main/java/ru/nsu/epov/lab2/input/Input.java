@@ -1,22 +1,26 @@
 package ru.nsu.epov.lab2.input;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
-import java.util.Stack;
-
 
 public class Input
 {
-    public String[] In(Map<String, Double> DefineMap, Stack<Double> stack, String[] args) throws IOException {
+    static final Logger logger = LogManager.getLogger(Input.class);
+
+    public String[] In(String[] args) throws IOException {
         if (args.length == 1)
         {
-            String FilePath = args[0];   // getting path to a file
+            logger.debug("Calculator's commands begins to be read from file.");
+            String FilePath = args[0];
             File InFile = new File(FilePath);
             return toReadStrings.ReadStringFromFile(InFile);
         }
         else if (args.length < 1)
         {
+            logger.debug("Calculator's commands begins to be read from console.");
             return toReadStrings.ReadStringFromConsole();
         }
         else

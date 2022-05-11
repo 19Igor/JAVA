@@ -1,30 +1,40 @@
 package ru.nsu.epov.lab2.core;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.Map;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.nsu.epov.lab2.input.Input;
 import ru.nsu.epov.lab2.perpetrator.Perpetrator;
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Stack;
-import java.util.logging.Logger;
 
 
 public class Main {
 
-    private static final Logger logger = Logger.getLogger(Main.class.getName());
+//    static final Logger rootLogger = (Logger) LogManager.getRootLogger();
+    static final Logger logger = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) throws IOException, InvocationTargetException, NoSuchMethodException {
-
-        HashMap<String, Double> DefineMap = new HashMap<String, Double>();
-        Stack<Double> stack = new Stack<Double>();
+    public static void main(String[] args) throws IOException{
+        //  /Users/igorepov/IdeaProjects/JAVA/lab2/InputFile.txt
+        /**
+         * DefineMap consists variable with its values
+         * */
+        HashMap<String, Double> DefineMap = new HashMap<>();
+        /**
+         * stack consist values of variables that are numbers
+         * */
+        Stack<Double> stack = new Stack<>();
         Input in = new Input();
 
-
-        String[] InputData = in.In(DefineMap, stack, args);
-        Perpetrator.Perp(InputData, stack, DefineMap);
+        /**
+         * Here we can show reading input string of commands of calculator
+         * */
+        String[] InputData = in.In(args);
+        logger.debug("Calculator's commands reading ends.");
+        logger.debug("Perpetrating begins.");
+        Perpetrator.Perpetrate(InputData, stack, DefineMap);
+        logger.debug("Perpetrating ends.");
 
         return;
     }

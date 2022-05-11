@@ -1,16 +1,19 @@
 package ru.nsu.epov.lab2.OperationFabric;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.nsu.epov.lab2.core.CommandContext;
 import ru.nsu.epov.lab2.core.Operations;
 
-import java.util.Stack;
-import java.util.concurrent.ExecutionException;
-
 import static java.lang.Math.sqrt;
 
-public class SQRT implements Operations {
+public class SQRT implements Operations
+{
+    final Logger logger = LogManager.getLogger(SQRT.class);
     @Override
-    public void workingCommand(CommandContext context) {
+    public void workingCommand(CommandContext context)
+    {
+        logger.debug("Command SQRT runs.");
         try {
             if (context.getStack().peek() < 0) {
                 throw new Exception("Корень от отрицательного числа.");
@@ -19,5 +22,6 @@ public class SQRT implements Operations {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        logger.debug("Command SQRT ended.");
     }
 }

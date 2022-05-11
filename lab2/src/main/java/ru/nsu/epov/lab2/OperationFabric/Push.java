@@ -1,17 +1,17 @@
 package ru.nsu.epov.lab2.OperationFabric;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.nsu.epov.lab2.core.CommandContext;
 import ru.nsu.epov.lab2.core.Operations;
-import ru.nsu.epov.lab2.perpetrator.toCheckParam;
-
-import java.util.EmptyStackException;
-import java.util.Map;
-import java.util.Stack;
 
 public class Push implements Operations
 {
+    final Logger logger = LogManager.getLogger(Push.class);
     @Override
-    public void workingCommand(CommandContext context) {
+    public void workingCommand(CommandContext context)
+    {
+        logger.debug("Command PUSH runs.");
         try
         {
             String val = context.getValues().pop();
@@ -29,6 +29,7 @@ public class Push implements Operations
         {
             e.printStackTrace();
         }
+        logger.debug("Command PUSH ended.");
     }
     @Override
     public final Integer returnArgNumb()
