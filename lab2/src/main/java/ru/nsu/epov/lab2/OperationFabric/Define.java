@@ -62,4 +62,3 @@ public class Define implements Operations
         return 2;
     }
 }
-
