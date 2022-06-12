@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea layoutX="25.0" layoutY="28.0" prefHeight="153.0" prefWidth="182.0" text="Тетрис - это самая крутая&#10;игра в мире , в кототорую &#10;зарубаются самые жёсткие&#10;и закоренеллые геймеры,&#10;чтобы узнать, &#10;у кого крепче яйца." />
+      <TextArea layoutX="225.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" text="Правила:&#10;Твоя главная задача - набрать&#10;как можно больше очков, &#10;игровых очков, а не очков &#10;своих товарищей.&#10;Результаты свой работы ты&#10;можешь посмотреть в таблице&#10;победителей, если ты её,&#10;конечно же, достоин. &#10;" />
+      <TextArea layoutX="56.0" layoutY="400.0" prefHeight="107.0" prefWidth="118.0" text="&#10;&#10;       Good Luck ! &#10;&#10;       Hahahaha !" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="276.0" AnchorPane.topAnchor="400.0" />
+   </children>
+</AnchorPane>
