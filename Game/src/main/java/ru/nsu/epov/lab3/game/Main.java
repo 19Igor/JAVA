@@ -5,9 +5,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import ru.nsu.epov.lab3.game.V.MMC;
-import ru.nsu.epov.lab3.game.M.Model;
-
+import ru.nsu.epov.lab3.game.Viewer.MMC;
 
 
 import java.io.FileNotFoundException;

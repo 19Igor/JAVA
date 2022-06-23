@@ -1,4 +1,4 @@
-package ru.nsu.epov.lab3.game.M;
+package ru.nsu.epov.lab3.game.Model;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;

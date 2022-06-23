@@ -1,4 +1,4 @@
-package ru.nsu.epov.lab3.game.V;
+package ru.nsu.epov.lab3.game.Viewer;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static java.lang.System.exit;
-import static ru.nsu.epov.lab3.game.V.Tetris.XMAX;
+import static ru.nsu.epov.lab3.game.Viewer.Tetris.XMAX;
 
 public class MMC {
 

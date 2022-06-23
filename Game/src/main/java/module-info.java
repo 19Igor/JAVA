@@ -5,10 +5,10 @@ module ru.nsu.epov.lab3.game {
 
     opens ru.nsu.epov.lab3.game to javafx.fxml;
     exports ru.nsu.epov.lab3.game;
-    exports ru.nsu.epov.lab3.game.C;
-    opens ru.nsu.epov.lab3.game.C to javafx.fxml;
-    exports ru.nsu.epov.lab3.game.M;
-    opens ru.nsu.epov.lab3.game.M to javafx.fxml;
-    exports ru.nsu.epov.lab3.game.V;
-    opens ru.nsu.epov.lab3.game.V to javafx.fxml;
+    exports ru.nsu.epov.lab3.game.Controller;
+    opens ru.nsu.epov.lab3.game.Controller to javafx.fxml;
+    exports ru.nsu.epov.lab3.game.Model;
+    opens ru.nsu.epov.lab3.game.Model to javafx.fxml;
+    exports ru.nsu.epov.lab3.game.Viewer;
+    opens ru.nsu.epov.lab3.game.Viewer to javafx.fxml;
 }

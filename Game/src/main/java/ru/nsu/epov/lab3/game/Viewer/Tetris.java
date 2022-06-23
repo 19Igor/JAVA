@@ -1,4 +1,4 @@
-package ru.nsu.epov.lab3.game.V;
+package ru.nsu.epov.lab3.game.Viewer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,13 +15,13 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import ru.nsu.epov.lab3.game.C.Controller;
-import ru.nsu.epov.lab3.game.C.PlayersTop;
-import ru.nsu.epov.lab3.game.M.Form;
-import ru.nsu.epov.lab3.game.M.Backgrounds;
-import ru.nsu.epov.lab3.game.M.Model;
+import ru.nsu.epov.lab3.game.Controller.Controller;
+import ru.nsu.epov.lab3.game.Controller.PlayersTop;
+import ru.nsu.epov.lab3.game.Model.Form;
+import ru.nsu.epov.lab3.game.Model.Backgrounds;
+import ru.nsu.epov.lab3.game.Model.Model;
 
-import static ru.nsu.epov.lab3.game.M.Backgrounds.setGameBackground;
+import static ru.nsu.epov.lab3.game.Model.Backgrounds.setGameBackground;
 
 public class Tetris {
 

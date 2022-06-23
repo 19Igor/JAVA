@@ -1,4 +1,4 @@
-package ru.nsu.epov.lab3.game.V;
+package ru.nsu.epov.lab3.game.Viewer;
 
 public class Line {
 

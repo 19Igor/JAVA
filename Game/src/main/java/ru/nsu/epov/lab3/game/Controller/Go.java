@@ -1,11 +1,10 @@
-package ru.nsu.epov.lab3.game.C;
+package ru.nsu.epov.lab3.game.Controller;
 
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import ru.nsu.epov.lab3.game.V.Tetris;
-import ru.nsu.epov.lab3.game.C.PlayersTop;
+import ru.nsu.epov.lab3.game.Viewer.Tetris;
 
 import ru.nsu.epov.lab3.game.Main;
 

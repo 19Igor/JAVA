@@ -1,11 +1,11 @@
-package ru.nsu.epov.lab3.game.C;
+package ru.nsu.epov.lab3.game.Controller;
 
 
 import javafx.scene.shape.Rectangle;
-import ru.nsu.epov.lab3.game.M.Form;
-import ru.nsu.epov.lab3.game.V.Tetris;
+import ru.nsu.epov.lab3.game.Model.Form;
+import ru.nsu.epov.lab3.game.Viewer.Tetris;
 
-import static ru.nsu.epov.lab3.game.V.Tetris.YMAX;
+import static ru.nsu.epov.lab3.game.Viewer.Tetris.YMAX;
 
 public class Controller {
     // Getting the numbers and the MESH from Tetris

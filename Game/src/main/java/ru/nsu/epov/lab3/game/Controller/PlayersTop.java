@@ -1,4 +1,4 @@
-package ru.nsu.epov.lab3.game.C;
+package ru.nsu.epov.lab3.game.Controller;
 
 import java.io.*;
 import java.util.HashMap;
