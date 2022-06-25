@@ -7,7 +7,6 @@ import javafx.stage.Stage;
 
 import ru.nsu.epov.lab3.game.Viewer.MMC;
 
-
 import java.io.FileNotFoundException;
 
 
