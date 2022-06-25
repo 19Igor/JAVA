@@ -12,12 +12,13 @@ public class Worker implements Runnable{
 	private Warehouse bWarehouse;
 	private Warehouse aWarehouse;
 	private Warehouse dWarehouse;
-	public Worker(Inspector insp, Warehouse ewh, Warehouse bwh, Warehouse awh, Warehouse dwh) {
+	public Worker(Inspector insp, Warehouse engineWarehouse, Warehouse bodycarWarehouse,
+				  Warehouse accessoriesWarehouse, Warehouse dealersWarehouse) {
 		inspector = insp;
-		eWarehouse = ewh;
-		bWarehouse = bwh;
-		aWarehouse = awh;
-		dWarehouse = dwh;
+		eWarehouse = engineWarehouse;
+		bWarehouse = bodycarWarehouse;
+		aWarehouse = accessoriesWarehouse;
+		dWarehouse = dealersWarehouse;
 	}
 	
 	private Product getDetailFromWarehouse(Warehouse warehouse) {

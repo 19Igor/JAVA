@@ -19,13 +19,13 @@ public class WorkerController {
 	private ThreadPoolExecutor executor;
 	ArrayList<Worker> workers;
 	
-	public WorkerController(int _workersAmount, Inspector insp, Warehouse ewh, Warehouse bwh, Warehouse awh, Warehouse dwh) {
+	public WorkerController(int _workersAmount, Inspector insp, Warehouse engineWarehouse, Warehouse bodycarWarehouse, Warehouse accessoriesWarehouse, Warehouse dealersWarehouse) {
 		workersAmount = _workersAmount;
 		inspector = insp;
-		eWarehouse = ewh;
-		bWarehouse = bwh;
-		aWarehouse = awh;
-		dWarehouse = dwh;
+		eWarehouse = engineWarehouse;
+		bWarehouse = bodycarWarehouse;
+		aWarehouse = accessoriesWarehouse;
+		dWarehouse = dealersWarehouse;
 		executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(workersAmount);
 		workers = new ArrayList<Worker>();
 	}

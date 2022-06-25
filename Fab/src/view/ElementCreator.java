@@ -4,6 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import constans.Constant;
 
 import controller.DealerController;
 import controller.SupplierController;
@@ -17,8 +18,8 @@ public class ElementCreator {
 		JSlider slider = new JSlider(minTick, maxTick, curTick);
 		slider.setPaintTicks(true);
 		slider.setPaintLabels(true);
-		slider.setMajorTickSpacing(100);
-        slider.setMinorTickSpacing(50);
+		slider.setMajorTickSpacing(Constant.MAJOR_SPACE);
+        slider.setMinorTickSpacing(Constant.MINOR_SPACE);
         return slider;
 	}
 	

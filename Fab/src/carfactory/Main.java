@@ -12,6 +12,7 @@ import view.GUIView;
 import warehouse.Warehouse;
 import warehouse.WarehouseCreator;
 import worker.Inspector;
+import constans.Constant;
 
 public class Main {
 
@@ -19,7 +20,7 @@ public class Main {
 		
 		Config config = null;
 		try {
-			config = new Config("config.cfg");
+			config = new Config(Constant.CONFIG_PATH);
 		} catch (IOException | ConfigException e) {
 			e.printStackTrace();
 			System.exit(1);

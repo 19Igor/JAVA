@@ -8,6 +8,7 @@ import config.Config;
 import controller.DealerController;
 import controller.SupplierController;
 import controller.WorkerController;
+import constans.Constant;
 
 public class GUIView extends JFrame implements Runnable {
 	SupplierController eController;
@@ -51,7 +52,7 @@ public class GUIView extends JFrame implements Runnable {
 	}
 	
 	private void initLTitles() {
-		for (int i = 0; i < 4; ++i) {
+		for (int i = 0; i < Constant.LABEL_AMOUNT; ++i) {
 			lTitles[i] = new JPanel();
 			lTitles[i].setLayout(LayoutCreator.getLTitleLayout());
 		}
@@ -63,7 +64,7 @@ public class GUIView extends JFrame implements Runnable {
 	}
 	
 	private void initRTitles() {
-		for (int i = 0; i < 4; ++i) {
+		for (int i = 0; i < Constant.LABEL_AMOUNT; ++i) {
 			rTitles[i] = new JPanel();
 			rTitles[i].setLayout(LayoutCreator.getRTitleLayout());
 		}
@@ -75,7 +76,7 @@ public class GUIView extends JFrame implements Runnable {
 	}
 	
 	private void initSliders() {
-		for (int i = 0; i < 4; ++i) {
+		for (int i = 0; i < Constant.LABEL_AMOUNT; ++i) {
 			sliders[i] = new JPanel();
 			sliders[i].setLayout(LayoutCreator.getSliderLayout());
 		}
@@ -108,7 +109,7 @@ public class GUIView extends JFrame implements Runnable {
 	}
 	
 	private void addElements() {
-		for (int i = 0; i < 4; ++i) {
+		for (int i = 0; i < Constant.LABEL_AMOUNT; ++i) {
 			add(lTitles[i], "grow");
 			add(sliders[i], "grow");
 			add(rTitles[i], "grow");

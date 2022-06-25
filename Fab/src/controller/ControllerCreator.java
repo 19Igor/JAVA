@@ -38,10 +38,13 @@ public class ControllerCreator {
 		);
 	}
 
-	public WorkerController createWorkerController(Inspector insp, Warehouse ewh, Warehouse bwh, Warehouse awh, Warehouse dwh) {
+	public WorkerController createWorkerController(
+			Inspector insp, Warehouse engineWarehouse, Warehouse bodycarWarehouse,
+			Warehouse accessoriesWarehouse, Warehouse dealersWarehouse)
+	{
 		return new WorkerController(
 			config.NUMBER_OF_WORKERS,
-			insp, ewh, bwh, awh, dwh
+			insp, engineWarehouse, bodycarWarehouse, accessoriesWarehouse, dealersWarehouse
 		);
 	}
 	

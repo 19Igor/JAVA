@@ -51,64 +51,64 @@ public class Config {
 				continue;
 			}
 			if (kwarg.length == 2) {
-				String k = kwarg[0];
-				String v = kwarg[1];
+				String key = kwarg[0];
+				String value = kwarg[1];
 				
-				switch (k) {
+				switch (key) {
 					case ("engineWarehouseCapacity"):
 						optionsSetCount++;
-						ENGINE_WAREHOUSE_CAPACITY = parseOption(k, v);
+						ENGINE_WAREHOUSE_CAPACITY = parseOption(key, value);
 						break;
 					case ("carbodyWarehouseCapacity"):
 						optionsSetCount++;
-						CARBODY_WAREHOUSE_CAPACITY = parseOption(k, v);
+						CARBODY_WAREHOUSE_CAPACITY = parseOption(key, value);
 						break;
 					case ("accessoryWarehouseCapacity"):
 						optionsSetCount++;
-						ACCESSORY_WAREHOUSE_CAPACITY = parseOption(k, v);
+						ACCESSORY_WAREHOUSE_CAPACITY = parseOption(key, value);
 						break;
 					case ("dealerWarehouseCapacity"):
 						optionsSetCount++;
-						DEALER_WAREHOUSE_CAPACITY = parseOption(k, v);
+						DEALER_WAREHOUSE_CAPACITY = parseOption(key, value);
 						break;
 					case ("numberOfEngineSuppliers"):
 						optionsSetCount++;
-						NUMBER_OF_ENGINE_SUPPLIERS = parseOption(k, v);
+						NUMBER_OF_ENGINE_SUPPLIERS = parseOption(key, value);
 						break;
 					case ("numberOfCarbodySuppliers"):
 						optionsSetCount++;
-						NUMBER_OF_CARBODY_SUPPLIERS = parseOption(k, v);
+						NUMBER_OF_CARBODY_SUPPLIERS = parseOption(key, value);
 						break;
 					case ("numberOfAccessorySuppliers"):
 						optionsSetCount++;
-						NUMBER_OF_ACCESSORY_SUPPLIERS = parseOption(k, v);
+						NUMBER_OF_ACCESSORY_SUPPLIERS = parseOption(key, value);
 						break;
 					case ("engineSupplierProducingTime"):
 						optionsSetCount++;
-						ENGINE_SUPPLIER_PRODUCING_TIME = parseOption(k, v);
+						ENGINE_SUPPLIER_PRODUCING_TIME = parseOption(key, value);
 						break;
 					case ("carbodySupplierProducingTime"):
 						optionsSetCount++;
-						CARBODY_SUPPLIER_PRODUCING_TIME = parseOption(k, v);
+						CARBODY_SUPPLIER_PRODUCING_TIME = parseOption(key, value);
 						break;
 					case ("accessorySupplierProducingTime"):
 						optionsSetCount++;
-						ACCESSORY_SUPPLIER_PRODUCING_TIME = parseOption(k, v);
+						ACCESSORY_SUPPLIER_PRODUCING_TIME = parseOption(key, value);
 						break;
 					case ("numberOfWorkers"):
 						optionsSetCount++;
-						NUMBER_OF_WORKERS = parseOption(k, v);
+						NUMBER_OF_WORKERS = parseOption(key, value);
 						break;
 					case ("numberOfDealers"):
 						optionsSetCount++;
-						NUMBER_OF_DEALERS = parseOption(k, v);
+						NUMBER_OF_DEALERS = parseOption(key, value);
 						break;
 					case ("dealerRequestingTime"):
 						optionsSetCount++;
-						DEALER_REQUESTING_TIME = parseOption(k, v);
+						DEALER_REQUESTING_TIME = parseOption(key, value);
 						break;
 					default:
-						throw new ConfigException("Unknown option \"" + k + "\"");
+						throw new ConfigException("Unknown option \"" + key + "\"");
 				}
 			}
 			else {
